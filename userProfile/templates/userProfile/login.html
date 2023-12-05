@@ -4,16 +4,30 @@
 
 {% block content %}
 
-    <h1 class="text-xl">Login</h1>
+<div class="container mx-auto mt-8">
+    <div class="w-full max-w-xs mx-auto">
+        <form method="POST" action=".">
+            {% csrf_token %}
+            
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    Usuário:
+                </label>
+                <input class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" name="username" placeholder="Digite seu usuário" required>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    Senha:
+                </label>
+                <input class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" name="password" placeholder="Digite sua senha" required>
+            </div>
 
-    <form method="POST" action=".">
-
-        {%csrf_token%}
-
-        {{form.as_p}}
-
-        <button class="py-4 px-8 bg-teal-500 text-white rounded-xl">Login</button>
-
-    </form>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                Login
+            </button>
+        </form>
+    </div>
+</div>
 
 {% endblock %}
