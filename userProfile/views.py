@@ -18,6 +18,6 @@ def signup(request):
     
     form = UserCreationForm()
 
-    return render(request, 'userProfile/signup',{
+    return render(request, 'userProfile/signup.html',{
         'form' : form
     })

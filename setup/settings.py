@@ -29,9 +29,9 @@ DEBUG = config("DEBUG", cast = bool, default = False)
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast = Csv())
 
-LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_REDIRECT_URL = '/dashboard/'
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todos',
     'userProfile',
+    'dashboard'
 ]
 
 MIDDLEWARE = [
